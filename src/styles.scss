@@ -1,0 +1,240 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$brice-courtot-td-angular-primary: mat.define-palette(mat.$indigo-palette);
+$brice-courtot-td-angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$brice-courtot-td-angular-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$brice-courtot-td-angular-theme: mat.define-light-theme((color: (primary: $brice-courtot-td-angular-primary,
+                accent: $brice-courtot-td-angular-accent,
+                warn: $brice-courtot-td-angular-warn,
+            )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($brice-courtot-td-angular-theme);
+
+/* You can add global styles to this file, and also import other style files */
+:host {
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Variables */
+$border-radius: 8px;
+$color-dark: #333;
+$color-light: snow;
+$color-danger: #f83030;
+$color-success: #7fff00;
+$color-principal: #006DAA;
+$color-secondary: #003559;
+$btn-padding: 9px 23px;
+
+body {
+    background-color: $color-light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 8px 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+p {
+    margin: 0;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    background-color: $color-principal;
+    color: $color-light;
+    font-weight: 600;
+    justify-content: space-around;
+}
+
+.toolbar-logo {
+    margin: 1.5rem 1rem;
+}
+
+.toolbar-title {
+    letter-spacing: 6px;
+    font-family: 'Dangrek', cursive;
+}
+
+.toolbar-company {
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-btn-add-column {
+    margin-left: 1.5rem;
+    border-radius: $border-radius;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: $color-dark;
+    background: $color-light;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 600;
+    padding: $btn-padding;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.toolbar-btn-add-column:hover {
+    background: $color-dark;
+    color: $color-light;
+}
+
+.column {
+    width: fit-content;
+    border: 1px $color-dark solid;
+    border-radius: $border-radius;
+    padding: 1.5rem;
+    box-shadow: 5px 5px 5px 0px rgb(41 41 41 / 9%);
+    margin: 1.5rem 0;
+}
+
+.space {
+    padding: 1.5rem 0;
+}
+
+.task {
+    background: $color-light;
+    border: 1px $color-dark solid;
+    border-radius: $border-radius;
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-btn-delete {
+    cursor: pointer;
+    background: $color-danger;
+    border: none;
+    color: $color-light;
+    font-size: 12px;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    max-height: 21px;
+    font-weight: 900;
+    border-radius: 50%;
+}
+
+.task-add-btn {
+    margin-left: 1.5rem;
+    border: none;
+    background: $color-dark;
+    border-radius: $border-radius;
+    padding: $btn-padding;
+    color: $color-light;
+    font-family: Arial;
+    font-weight: 600;
+}
+
+.task-add-btn:hover {
+    margin-left: 1.5rem;
+    border: none;
+    background: $color-light;
+    border-radius: $border-radius;
+    padding: $btn-padding;
+    color: $color-dark;
+    font-family: Arial;
+    font-weight: 600;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: start;
+}
+
+.subtitle {
+    margin: 2.5rem 0 2rem 0;
+}
+
+a,
+a:visited,
+a:hover {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #125699;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background-color: $color-secondary;
+    color: $color-light;
+    font-weight: 600;
+    justify-content: center;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+input {
+    padding: $btn-padding;
+    border-radius: $border-radius;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-item-center {
+    align-items: center;
+}
