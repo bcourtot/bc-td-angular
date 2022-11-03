@@ -11,6 +11,7 @@ export class ColumnComponent implements OnInit
 {
   @Input() column!: Column;
   @Input() columnIndex!: number;
+  @Input() taskIndex!: number;
   newTaskName: string = '';
 
 
@@ -23,6 +24,11 @@ export class ColumnComponent implements OnInit
   addTask()
   {
     this.kanbanService.addTask(this.columnIndex, this.newTaskName);
+  }
+
+  deleteColumn()
+  {
+    this.kanbanService.deleteColumn(this.columnIndex);
   }
 
 }

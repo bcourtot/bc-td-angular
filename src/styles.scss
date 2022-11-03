@@ -124,7 +124,7 @@ p {
     border-radius: $border-radius;
     padding: 1.5rem;
     box-shadow: 5px 5px 5px 0px rgb(41 41 41 / 9%);
-    margin: 1.5rem 0;
+    margin: 1.5rem 1rem;
 }
 
 .space {
@@ -180,16 +180,12 @@ p {
 
 .content {
     display: flex;
-    margin: 82px auto 32px;
     padding: 0 16px;
-    max-width: 960px;
     flex-direction: column;
     align-items: start;
+    margin-top: 15%;
 }
 
-.subtitle {
-    margin: 2.5rem 0 2rem 0;
-}
 
 a,
 a:visited,
@@ -200,25 +196,6 @@ a:hover {
 
 a:hover {
     color: #125699;
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    background-color: $color-secondary;
-    color: $color-light;
-    font-weight: 600;
-    justify-content: center;
-}
-
-html,
-body {
-    height: 100%;
 }
 
 body {
@@ -237,4 +214,8 @@ input {
 
 .align-item-center {
     align-items: center;
+}
+
+.margin-column {
+    margin: 25px;
 }

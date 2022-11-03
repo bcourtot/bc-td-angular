@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { KanbanService } from '../service/kanban.service';
 import { Task } from '../task';
 
 @Component({
@@ -9,10 +10,19 @@ import { Task } from '../task';
 export class TaskComponent implements OnInit
 {
   @Input() task!: Task;
-  constructor() { }
+  @Input() taskIndex!: number;
+  @Input() columnIndex!: number;
+
+
+  constructor(private kanbanService: KanbanService) { }
 
   ngOnInit(): void
   {
+  }
+
+  deleteTask()
+  {
+    this.kanbanService.deleteTask(this.columnIndex, this.taskIndex);
   }
 
 }
