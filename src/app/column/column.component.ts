@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Column } from '../column';
+import { KanbanService } from '../service/kanban.service';
 
 @Component({
   selector: 'app-column',
@@ -7,11 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColumnComponent implements OnInit
 {
+  @Input() column!: Column;
+  @Input() columnIndex!: number;
+  newTaskName: string = '';
 
-  constructor() { }
+
+  constructor(private kanbanService: KanbanService) { }
 
   ngOnInit(): void
   {
+  }
+
+  addTask()
+  {
+    this.kanbanService.addTask(this.columnIndex, this.newTaskName);
   }
 
 }

@@ -4,7 +4,7 @@
         <h1 class="toolbar-title">KANBAN</h1>
     </div>
     <div class="toolbar-column-name">
-        <input type="text" name="column" id="column" placeholder="Ex: Backlog">
-        <button class="toolbar-btn-add-column">Ajouter une colonne</button>
+        <input type="text" name="column" id="column" [(ngModel)]="newColumnName" placeholder="Ex: Backlog">
+        <button class="toolbar-btn-add-column" (click)="addColumn()">Ajouter une colonne</button>
     </div>
 </nav>

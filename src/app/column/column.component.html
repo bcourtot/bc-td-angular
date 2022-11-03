@@ -1,12 +1,12 @@
 <div class="column">
     <div class="d-flex align-item-center">
-        <h4>Titre column</h4>
+        <h4>{{ column.title }}</h4>
         <button class="task-btn-delete">X</button>
     </div>
     <hr>
-    <app-task></app-task>
+    <app-task *ngFor="let task of column.tasks; let i = index" [task]="task"></app-task>
     <div class="space"></div>
-    <input type="text" name="task" id="task" placeholder="Ex: Rédiger le rapport" />
-    <button class="task-add-btn">Ajouter une
+    <input [(ngModel)]="newTaskName" type="text" name="task" id="task" placeholder="Ex: Rédiger le rapport" />
+    <button (click)="addTask()" class="task-add-btn">Ajouter une
         tâche</button>
 </div>
