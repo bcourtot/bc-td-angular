@@ -22,6 +22,7 @@ export class TaskComponent implements OnInit
 
   deleteTask()
   {
+    console.log(this.columnIndex, this.taskIndex);
     this.kanbanService.deleteTask(this.columnIndex, this.taskIndex);
   }
 

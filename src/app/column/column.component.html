@@ -4,7 +4,8 @@
         <button (click)="deleteColumn()" class="task-btn-delete">X</button>
     </div>
     <hr>
-    <app-task *ngFor="let task of column.tasks; let j = index" [task]="task" [taskIndex]="j"></app-task>
+    <app-task *ngFor="let task of column.tasks; let j = index" [task]="task" [taskIndex]="j"
+        [columnIndex]="columnIndex"></app-task>
     <div class="space"></div>
     <input [(ngModel)]="newTaskName" type="text" name="task" id="task" placeholder="Ex: Rédiger le rapport" />
     <button (click)="addTask()" class="task-add-btn">Ajouter une

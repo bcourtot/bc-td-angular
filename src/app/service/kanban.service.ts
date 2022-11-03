@@ -36,5 +36,4 @@ export class KanbanService
     this.columns[ i ].tasks.splice(j, 1);
   }
 
-
 }
